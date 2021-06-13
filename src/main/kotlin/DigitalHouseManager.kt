@@ -12,7 +12,7 @@ class DigitalHouseManager(
     ) {
 
         val novoCurso = Curso(nome, codigoCurso, qtdMaximaDeAlunos)
-        listaCursos.add(novoCurso)
+        this.listaCursos.add(novoCurso)
         println("novo curso adicionado $nome $codigoCurso")
     }
 
@@ -64,7 +64,7 @@ class DigitalHouseManager(
 
         val novoAluno = Aluno(nome, sobrenome, codigoAluno)
         listaAluno.add(novoAluno)
-        println("novo curso adicionado $nome $codigoAluno")
+        println("novo aluno adicionado $nome $codigoAluno")
     }
 
     fun matricularAlunoCruso(
@@ -78,7 +78,7 @@ class DigitalHouseManager(
         if (curso != null && aluno != null) {
             if (curso.adicionarUmAluno(aluno)) {
                 listaMatriculas.add(Matricula(aluno, curso))
-                println("Aluno Matricula")
+                println("Aluno Matriculado codigo do aluno:$codigoAluno ,codigo do curso: $codigoCurso")
             } else {
                 println("Não foi possível realizar a matricula.")
             }
@@ -104,5 +104,4 @@ class DigitalHouseManager(
         }
     }
 }
-
 
