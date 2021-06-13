@@ -12,11 +12,12 @@ class Curso(
     }
 
     fun adicionarUmAluno(umAluno: Aluno): Boolean {
-        return if (listaAlunosMatriculados.size < qtdMaximaAluno) {
-            println("Aluno adicionado $listaAlunosMatriculados.add(umAluno)")
-            return true
+        return if (listaAlunosMatriculados.find { it == umAluno } == null && listaAlunosMatriculados.size < qtdMaximaAluno) {
+            listaAlunosMatriculados.add(umAluno)
+            println("Aluno adicionado")
+            true
         } else {
-            return false
+            false
         }
     }
 
