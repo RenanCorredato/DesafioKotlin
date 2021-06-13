@@ -10,4 +10,14 @@ class Curso(
     override fun equals(other: Any?): Boolean {
         return (other as? Curso)?.codigoCurso == this.codigoCurso
     }
+
+    fun adicionarUmAluno(umAluno: Aluno): Boolean{
+       return if (listaAlunosMatriculados.size < qtdMaximaAluno) {
+           listaAlunosMatriculados.add(umAluno)
+           return true
+       }else{
+           return false
+
+       }
+    }
 }
